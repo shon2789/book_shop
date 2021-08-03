@@ -102,7 +102,6 @@ function doTrans() {
 
     els.forEach(function (el) {
         var txt = getTrans(el.dataset.trans)
-        console.dir(el)
         if (el.nodeName === 'INPUT') {
             el.setAttribute('placeholder', txt)
         } else {

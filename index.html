@@ -38,36 +38,117 @@
         <table class="table table-striped table-light">
             <h1 class="no-books"></h1>
         </table>
-        <!-- </div> -->
-        <div class="page-btn-container">
+    </div>
+    <!-- <div class="page-btn-container">
 
-            <button class="btn btn-info go-back" onclick="onBackPage()">&#10094;</button>
-            <span class="page">1</span>
-            <button class="btn btn-info go-next" onclick="onNextPage()">&#10095;</button>
-        </div>
-        <button class="btn btn-success mt-3 add-btn" onclick="openModalForAdd()" data-trans="add-book">Add Book</button>
+        <button class="btn btn-info go-back" onclick="onBackPage()">&#10094;</button>
+        <span class="page">1</span>
+        <button class="btn btn-info go-next" onclick="onNextPage()">&#10095;</button>
+    </div> -->
 
-        <div class="modal-bg">
-            <div class="modal">
+
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a onclick="onBackPage()" class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link page-num" href="#">1</a></li>
+
+            <li class="page-item">
+                <a onclick="onNextPage()" class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <button data-bs-toggle="modal" data-bs-target="#add-book" class="btn btn-success mt-3 add-btn" data-trans="add-book"
+        type="button">Add Book</button>
+
+    <!-- Modal for reading book -->
+    <div class="modal fade" id="read-book" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title read-title" id="staticBackdropLabel"></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body info">
+
+                </div>
 
             </div>
-        </div>
-
-        <div class="modal-bg-update">
-            <div class="modal-update">
-                <label data-trans="new-price" for="price">Enter new Price: </label>
-                <input data-trans="new-price-ph" class="updated-price" type="number" id="price"
-                    placeholder="Enter price">
-                <button onclick="onSubmitUpdatedPrice()" class="btn btn-success update-submit-btn"
-                    data-trans="submit">Submit</button>
-                <span class="modal-close" onclick="closeModalForUpdate()">X</span>
-            </div>
-
         </div>
     </div>
+
+
+
+    <!-- Modal for price updating -->
+    <div class="modal fade" id="update-price" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title" id="staticBackdropLabel">Update Price</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label data-trans="new-price" for="price">Enter new Price: </label>
+                    <input data-trans="new-price-ph" class="updated-price" type="number" id="price"
+                        placeholder="Enter price">
+                </div>
+                <div class="modal-footer">
+                    <button data-bs-dismiss="modal" onclick="onSubmitUpdatedPrice()"
+                        class="btn btn-success update-submit-btn" data-trans="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for adding book: -->
+    <div class="modal fade" id="add-book" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 data-trans="add-book" class="modal-title " id="staticBackdropLabel">Add book
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label data-trans="book-name" for="book-name">Book Name:</label>
+                    <input data-trans="book-name-ph" name="book-name" type="text" id="book-name"
+                        placeholder="Enter Book Name">
+                    <label data-trans="book-price" for="book-price">Book Price:</label>
+                    <input data-trans="book-price-ph" name="book-price" type="number" id="book-price"
+                        placeholder="Enter Book Price">
+                    <label data-trans="book-image" for="book-image">Book Image:</label>
+                    <input data-trans="book-image-ph" name="book-image" type="url" id="book-image"
+                        placeholder="Enter Book Image URL">
+
+                </div>
+                <div class="modal-footer">
+                    <button data-bs-dismiss="modal" data-tans="submit" class="btn btn-success"
+                        onclick="onAddBook()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/i18n-service.js"></script>
     <script src="js/storage-service.js"></script>
     <script src="js/utils-service.js"></script>

@@ -8,7 +8,6 @@ function onLoad() {
 
 
 function renderBooks() {
-
     var books = getBooksToShow();
 
 
@@ -16,8 +15,8 @@ function renderBooks() {
 
         return `<tr><td>${book.id}</td><td><img class="cover-img" src="${book.imgUrl}"/></td>
         <td>${book.name}</td><td>${formatCurrency(book.price, getCurrLang())}</td>
-        <td><button data-trans="read" class="btn btn-primary" onclick="openModalForRead('${book.id}')">Read</button>
-        </td><td><button data-trans="update" class="btn btn-warning" onclick="onUpdateBook('${book.id}')">Update</button>
+        <td><button data-bs-toggle="modal" data-bs-target="#read-book" data-trans="read" class="btn btn-primary" onclick="openModalForRead('${book.id}')">Read</button>
+        </td><td><button data-bs-toggle="modal" data-bs-target="#update-price" data-trans="update" class="btn btn-warning" onclick="onUpdateBook('${book.id}')">Update</button>
         </td><td><button data-trans="delete" class="btn btn-danger" onclick="onRemoveBook('${book.id}')">Delete</button></td></tr>`
     })
     var strHTML = `<tr>
@@ -49,17 +48,15 @@ function onReadBook(bookName, bookPrice, elBtn) {
 }
 
 function onUpdateBook(bookIdx) {
-    openModalForUpdate();
     gCurrBookIdx = bookIdx;
 }
 
 function onSubmitUpdatedPrice() {
-    var elPrice = document.querySelector('.updated-price').value;
+    var elPrice = document.querySelector('.modal-body .updated-price').value;
     if (!elPrice) return;
     updateBook(gCurrBookIdx, elPrice);
 
     renderBooks();
-    closeModalForUpdate();
     document.querySelector('.updated-price').value = '';
     gCurrBookIdx = null;
 }
@@ -69,15 +66,14 @@ function onRemoveBook(bookIdx) {
     renderBooks();
 }
 
-function onAddBook(ev) {
-    ev.stopPropagation();
-    var bookName = document.querySelector('[name=book-name]').value;
-    var bookPrice = document.querySelector('[name=book-price]').value;
-    var bookImg = document.querySelector('[name=book-image]').value;
+function onAddBook() {
+    var bookName = document.querySelector('.modal-body [name=book-name]').value;
+    var bookPrice = document.querySelector('.modal-body [name=book-price]').value;
+    var bookImg = document.querySelector('.modal-body [name=book-image]').value;
+
 
     if (!bookName || !bookPrice) return;
     addBook(bookName, bookPrice, bookImg);
-    closeModal();
     renderBooks();
     bookName = '';
     bookPrice = '';
@@ -86,14 +82,14 @@ function onAddBook(ev) {
 }
 
 function onNextPage() {
-    var elPage = document.querySelector('.page');
+    var elPage = document.querySelector('.page-num');
     nextPage();
     elPage.innerText = gPageIdx + 1;
     renderBooks();
 }
 
 function onBackPage() {
-    var elPage = document.querySelector('.page');
+    var elPage = document.querySelector('.page-num');
     backPage();
     elPage.innerText = gPageIdx + 1;
     renderBooks();

@@ -21,11 +21,6 @@ body.rtl h1, div, label, .modal, button {
     font-family: 'Varela Round', 'M PLUS 1p';
 }
 
-body.rtl .modal {
-    direction: rtl;
-    text-align: right;
-}
-
 .container {
     max-width: 60vw;
     min-height: 70%;
@@ -80,9 +75,9 @@ button {
     opacity: 1;
 }
 
-.modal, .modal-update {
+/* .modal, .modal-update {
     padding: 2rem;
-    /* background: linear-gradient(to bottom, #ffecd2, #fcb69f); */
+    background: linear-gradient(to bottom, #ffecd2, #fcb69f);
     background-color: #f4f0ec;
     width: 50vw;
     min-height: 25vh;
@@ -92,7 +87,7 @@ button {
     text-align: left;
     position: relative;
     border-radius: 1.2rem;
-}
+} */
 
 .modal-close {
     position: absolute;
@@ -116,9 +111,9 @@ button {
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-.modal .book-desc {
+/* .modal .book-desc {
     font-size: 1rem;
-}
+} */
 
 .bookname {
     font-size: 2rem;
@@ -144,10 +139,10 @@ button {
     padding: 0.5rem;
 }
 
-.modal .top-container {
+/* .modal .top-container {
     display: flex;
     justify-content: flex-start;
-}
+} */
 
 .top-container p {
     margin-left: 0.5rem;
@@ -185,6 +180,7 @@ button {
 
 .container-title {
     background-color: #212529;
+    min-width: 100vw;
     height: 5rem;
     color: white;
 }
@@ -197,4 +193,8 @@ button:hover {
 button:active {
     transform: translateY(-1px);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header h5 {
+    color: #fff;
 }
