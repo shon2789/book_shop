@@ -46,7 +46,7 @@ function openModalForRead(bookId) {
     modalBg.classList.toggle('bg-active');
 
     var str = `<p class="bookname">${book.name}</p><div class="top-container"><img src="${book.imgUrl}"><p class="avg-rating"><span data-trans="avg-rating"></span>
-     ${book.avgRating}⭐️ </p></div><div class="book-price">$${book.price}</div><p class="book-desc">Lorem ipsum dolor sit amet,
+     ${book.avgRating}⭐️ </p></div><div class="book-price">${formatCurrency(book.price, getCurrLang())}</div><p class="book-desc">Lorem ipsum dolor sit amet,
      consectetur adipiscing elit. Sed sed viverra augue. Etiam sagittis, mauris in iaculis venenatis,
       nulla massa laoreet felis, ac hendrerit nisi lorem sed nunc.
       Aenean non rutrum tortor. Aenean pretium, lectus quis ornare cursus, ipsum est tempor tortor, nec commodo eros velit ac lectus.
