@@ -15,6 +15,7 @@ function renderBooks() {
 
         return `<tr><td>${book.id}</td><td><img class="cover-img" src="${book.imgUrl}"/></td>
         <td>${book.name}</td><td>${formatCurrency(book.price, getCurrLang())}</td>
+       
         <td><button data-bs-toggle="modal" data-bs-target="#read-book" data-trans="read" class="btn btn-primary" onclick="openModalForRead('${book.id}')">Read</button>
         </td><td><button data-bs-toggle="modal" data-bs-target="#update-price" data-trans="update" class="btn btn-warning" onclick="onUpdateBook('${book.id}')">Update</button>
         </td><td><button data-trans="delete" class="btn btn-danger" onclick="onRemoveBook('${book.id}')">Delete</button></td></tr>`
