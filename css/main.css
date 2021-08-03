@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    text-align: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    background-color: #f4f0ec;
+}
+
+body.rtl {
+    direction: rtl;
+}
+
+body.rtl h1, div, label, .modal, button {
+    font-family: 'Varela Round', 'M PLUS 1p';
+}
+
+body.rtl .modal {
+    direction: rtl;
+    text-align: right;
+}
+
+.container {
+    max-width: 60vw;
+    min-height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+table {
+    border-collapse: seperate;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+td, th, tr {
+    padding: 0.5rem;
+    /* border-radius: 0.5rem; */
+}
+
+th {
+    /* text-decoration: underline; */
+    font-size: 1.2rem;
+}
+
+button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-bg, .modal-bg-update {
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal, .modal-update {
+    padding: 2rem;
+    /* background: linear-gradient(to bottom, #ffecd2, #fcb69f); */
+    background-color: #f4f0ec;
+    width: 50vw;
+    min-height: 25vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+    border-radius: 1.2rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal input {
+    width: 100%;
+    min-height: 3vh;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.modal img {
+    max-width: 40%;
+    margin-bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.modal .book-desc {
+    font-size: 1rem;
+}
+
+.bookname {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.modal .book-price {
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.rating-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.minus {
+    align-self: flex-start;
+}
+
+.rating {
+    padding: 0.5rem;
+}
+
+.modal .top-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.top-container p {
+    margin-left: 0.5rem;
+}
+
+.submit-rating {
+    margin-top: 0.8rem;
+}
+
+.no-books {
+    padding: 0.5rem;
+}
+
+.updated-price {
+    width: 15rem;
+    font-size: 0.8rem;
+    padding: 0.3rem;
+}
+
+.modal-update {
+    max-width: 20rem;
+    text-align: center;
+    align-items: center;
+}
+
+.cover-img {
+    width: 6rem;
+    height: 8rem;
+    object-fit: cover;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.container-title {
+    background-color: #212529;
+    height: 5rem;
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
