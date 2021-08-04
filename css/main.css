@@ -38,11 +38,9 @@ table {
 
 td, th, tr {
     padding: 0.5rem;
-    /* border-radius: 0.5rem; */
 }
 
 th {
-    /* text-decoration: underline; */
     font-size: 1.2rem;
 }
 
@@ -70,33 +68,6 @@ button {
     transition: visibility 0s, opacity 0.5s;
 }
 
-.bg-active {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* .modal, .modal-update {
-    padding: 2rem;
-    background: linear-gradient(to bottom, #ffecd2, #fcb69f);
-    background-color: #f4f0ec;
-    width: 50vw;
-    min-height: 25vh;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    text-align: left;
-    position: relative;
-    border-radius: 1.2rem;
-} */
-
-.modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-}
-
 .modal input {
     width: 100%;
     min-height: 3vh;
@@ -110,10 +81,6 @@ button {
     margin-bottom: 2rem;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-
-/* .modal .book-desc {
-    font-size: 1rem;
-} */
 
 .bookname {
     font-size: 2rem;
@@ -138,11 +105,6 @@ button {
 .rating {
     padding: 0.5rem;
 }
-
-/* .modal .top-container {
-    display: flex;
-    justify-content: flex-start;
-} */
 
 .top-container p {
     margin-left: 0.5rem;

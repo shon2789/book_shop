@@ -108,7 +108,6 @@ function onSortByName() {
 
 function onSetLang(lang) {
     setLang(lang);
-    // TODO: if lang is hebrew add RTL class to document.body
     if (lang === 'he') {
         document.body.classList.add('rtl')
     } else {
